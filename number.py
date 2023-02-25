@@ -34,7 +34,7 @@ class Number:
 
         returns: bool
         """
-        pass
+        return self.value // self.value == 1 and self.value // 1 == self.value
 
     def get_divisors(self):
         """
@@ -55,7 +55,7 @@ class Number:
 
         returns: int
         """
-        pass
+        return len(str(self.value))
 
     def get_sum(self):
         """
@@ -63,15 +63,25 @@ class Number:
 
         returns: int
         """
-        pass
-
+        s = 0
+        for i in str(self.value):
+            s += int(i)
+        return s    
+            
     def get_reverse(self):
         """
         Returns the number in reverse.
 
         returns: int
         """
-        pass
+        l = []
+        for i in str(self.value):
+            l.append(i)
+        a = l[len(str(self.value))::-1]
+        s = ''
+        for j in a:
+            s += j
+        return int(s)
 
     def is_palindrome(self):
         """
@@ -87,7 +97,10 @@ class Number:
 
         returns: list
         """
-        pass
+        l = []
+        for i in str(self.value):
+            l.append(i)
+        return l
 
     def get_max(self):
         """
@@ -95,7 +108,10 @@ class Number:
 
         returns: int
         """
-        pass
+        l = []
+        for i in str(self.value):
+            l.append(i)
+        return(int(max(l)))   
 
     def get_min(self):
         """
@@ -103,7 +119,10 @@ class Number:
 
         returns: int
         """
-        pass
+        l = []
+        for i in str(self.value):
+            l.append(i)
+        return(int(min(l)))    
 
     def get_average(self):
         """
@@ -136,10 +155,3 @@ class Number:
         returns: dict
         """
         pass
-    
-
-# Create a new instance of Number
-number = Number(10)
-# print(number.get_number())
-# print(number.is_even())
-print(number.get_divisors())
